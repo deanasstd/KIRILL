@@ -1,0 +1,70 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    margin: 0;
+    overflow: hidden; /* Добавим, чтобы кнопка не выходила за пределы видимой области */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; /* Важно: делаем контейнер позиционированным */
+    z-index: 1;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.options {
+    /* Нет необходимости в position: relative; здесь, если кнопка позиционируется относительно body или container */
+    z-index: 2;
+}
+
+.options button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Добавляем transition для плавного перемещения */
+    transition: top 0.2s ease-out, left 0.2s ease-out, background-color 0.3s ease;
+}
+
+#yes-button {
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: white;
+}
+
+#yes-button:hover {
+    background-color: #45a049;
+}
+
+#no-button {
+    background-color: #f44336; /* Красный цвет */
+    color: white;
+    /* Изначально кнопка будет в потоке документа, пока JavaScript ее не переместит */
+}
+
+#no-button:hover {
+    background-color: #d32f2f;
+}
+
+#sweet-message {
+    margin-top: 20px;
+    color: #e91e63; /* Розовый цвет */
+    font-size: 1.3em;
+    font-weight: bold;
+    /* Изначально скрываем милое сообщение с помощью CSS */
+    display: none;
+}
